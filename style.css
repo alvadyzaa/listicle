@@ -1,0 +1,234 @@
+:root[data-theme="light"] {
+    --bg-gradient-from: #84fab0;
+    --bg-gradient-to: #8fd3f4;
+    --app-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #2c3e50;
+    --input-bg: #f5f6fa;
+    --task-bg: white;
+    --time-color: #7f8c8d;
+    --border-color: #eee;
+    --input-text: #2c3e50;
+}
+
+:root[data-theme="dark"] {
+    --bg-gradient-from: #2c3e50;
+    --bg-gradient-to: #3498db;
+    --app-bg: rgba(44, 62, 80, 0.9);
+    --text-color: #ecf0f1;
+    --input-bg: #34495e;
+    --task-bg: #2c3e50;
+    --time-color: #bdc3c7;
+    --border-color: #34495e;
+    --input-text: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, var(--bg-gradient-from) 0%, var(--bg-gradient-to) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    padding: 20px;
+}
+
+.todo-app {
+    background: var(--app-bg);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#taskInput,
+#noteInput {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--input-bg);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    color: var(--input-text);
+}
+
+#noteInput {
+    height: 60px;
+    resize: none;
+    font-size: 14px;
+}
+
+#taskInput::placeholder,
+#noteInput::placeholder {
+    color: var(--time-color);
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    background: #2ecc71;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+#taskList {
+    list-style: none;
+}
+
+.task-item {
+    background: var(--task-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.task-time {
+    font-size: 12px;
+    color: var(--time-color);
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.digital-clock {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#clock {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--text-color);
+    font-family: 'Digital', 'Segoe UI', sans-serif;
+    text-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+}
+
+#date {
+    font-size: 1em;
+    color: var(--time-color);
+    margin-top: 5px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-row h1 {
+    margin-bottom: 0;
+}
+
+.theme-toggle {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    background: transparent;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-note {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--time-color);
+    font-style: italic;
+}
+
+.task-counter {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    padding: 8px;
+    border-radius: 8px;
+    background: var(--input-bg);
+}

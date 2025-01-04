@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listicle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <div class="header-row">
+                <h1>Listicle</h1>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+            <div class="task-counter">
+                Total tugas: <span id="taskCount">0</span>
+            </div>
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Tambah tugas baru...">
+                    <textarea id="noteInput" placeholder="Tambah catatan (opsional)..."></textarea>
+                </div>
+                <button id="addButton">+</button>
+            </div>
+            <ul id="taskList"></ul>
+            <div class="digital-clock">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
