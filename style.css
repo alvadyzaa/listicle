@@ -232,3 +232,67 @@ button:hover {
     border-radius: 8px;
     background: var(--input-bg);
 }
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .todo-app {
+        padding: 20px;
+    }
+
+    .header-row h1 {
+        font-size: 24px;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    #taskInput,
+    #noteInput {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 10px;
+    }
+
+    #addButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .task-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .task-actions button {
+        padding: 8px 16px;
+    }
+
+    #clock {
+        font-size: 2em;
+    }
+
+    #date {
+        font-size: 0.9em;
+    }
+}
+
+/* Prevent zoom on inputs in iOS */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    textarea {
+        font-size: 16px !important;
+    }
+}
