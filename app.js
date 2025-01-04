@@ -144,3 +144,13 @@ function updateTaskCount() {
 
 // Add initial counter update
 updateTaskCount();
+
+function updateVisitorCount() {
+    let count = localStorage.getItem('visitorCount') || 0;
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitorCount', count);
+    document.getElementById('visitorCount').textContent = count;
+}
+
+// Panggil saat halaman dimuat
+updateVisitorCount();
